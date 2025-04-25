@@ -15,8 +15,8 @@ def get_weather():
         response = requests.get(url)
         data = response.json()
         
-        # 自定义响应格式
         return jsonify({
+            "версия приложения": "v1.0.1",
             "город": data['name'],
             "страна": data['sys']['country'],
             "температура": f"{data['main']['temp']}°C",
